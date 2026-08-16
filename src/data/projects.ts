@@ -2,6 +2,38 @@ import type { Project } from "./types";
 
 export const PROJECTS: Project[] = [
   {
+    id: "proj-6",
+    title: "Store Web - E-commerce Full-Stack",
+    description:
+      "E-commerce full-stack com catálogo de produtos, frete por CEP, carrinho persistente, autenticação via cookies httpOnly, proteção contra XSS, rate limiting e checkout com Stripe.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Prisma",
+      "PostgreSQL",
+      "Docker",
+    ],
+    image: "/store-web.jpg",
+    githubUrl: "https://github.com/yanmartinss/store-web",
+  },
+  {
+    id: "proj-7",
+    title: "Desafio Mobile - Roteirização",
+    description:
+      "Aplicativo mobile offline-first para leitura de medidores e roteirização em campo, com captura de foto, geolocalização, OCR on-device e visualização de rotas em mapa.",
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "SQLite",
+      "Zustand",
+    ],
+    image: "/desafio-mobile.jpg",
+    githubUrl: "https://github.com/yanmartinss/desafio-mobile-roteirizacao",
+  },
+  {
     id: "proj-4",
     title: "MyAlbum - Álbum Virtual da Copa",
     description:

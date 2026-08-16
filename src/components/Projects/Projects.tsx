@@ -1,11 +1,36 @@
+import type { CSSProperties } from 'react';
+import { useEffect, useState } from 'react';
 import { PROJECTS } from '../../data/content';
+import { DEFAULT_SKILL_COLOR, SKILL_COLORS } from '../../data/skillColors';
 import type { Project } from '../../data/types';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import styles from './Projects.module.css';
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({
+  project,
+  onExpandImage,
+}: {
+  project: Project;
+  onExpandImage: (project: Project) => void;
+}) {
+  const openRepo = () => {
+    window.open(project.githubUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <article className={styles.card}>
+    <article
+      className={styles.card}
+      onClick={openRepo}
+      role="link"
+      tabIndex={0}
+      aria-label={`Ver código do projeto ${project.title}`}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openRepo();
+        }
+      }}
+    >
       <div className={styles.windowBar}>
         <span className={styles.windowDots} aria-hidden="true">
           <span className={styles.dotRed} />
@@ -15,12 +40,14 @@ function ProjectCard({ project }: { project: Project }) {
         <span className={styles.windowTitle}>{project.title}</span>
       </div>
 
-      <a
+      <button
+        type="button"
         className={styles.thumbnail}
-        href={project.githubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Ver código do projeto ${project.title}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          onExpandImage(project);
+        }}
+        aria-label={`Ampliar imagem do projeto ${project.title}`}
       >
         <img
           src={project.image}
@@ -30,15 +57,19 @@ function ProjectCard({ project }: { project: Project }) {
           width="640"
           height="360"
         />
-      </a>
+      </button>
 
       <div className={styles.cardBody}>
         <h3 className={styles.title}>{project.title}</h3>
         <p className={styles.description}>{project.description}</p>
 
         <ul className={styles.tagRow}>
-          {project.tags.map((tag, i) => (
-            <li key={tag} className={i % 2 === 1 ? styles.tagAlt : styles.tag}>
+          {project.tags.map((tag) => (
+            <li
+              key={tag}
+              className={styles.tag}
+              style={{ '--skill-color': SKILL_COLORS[tag] ?? DEFAULT_SKILL_COLOR } as CSSProperties}
+            >
               {tag}
             </li>
           ))}
@@ -50,6 +81,7 @@ function ProjectCard({ project }: { project: Project }) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
           >
             <svg
               width="14"
@@ -68,6 +100,7 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
             >
               <svg
                 width="14"
@@ -93,6 +126,17 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Projects() {
+  const [expanded, setExpanded] = useState<Project | null>(null);
+
+  useEffect(() => {
+    if (!expanded) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setExpanded(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [expanded]);
+
   return (
     <section id="projetos" className={styles.section}>
       <SectionHeading
@@ -102,9 +146,34 @@ export default function Projects() {
       />
       <div className={styles.grid}>
         {PROJECTS.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard key={project.id} project={project} onExpandImage={setExpanded} />
         ))}
       </div>
+
+      {expanded ? (
+        <div
+          className={styles.lightbox}
+          onClick={() => setExpanded(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Imagem ampliada do projeto ${expanded.title}`}
+        >
+          <button
+            type="button"
+            className={styles.lightboxClose}
+            onClick={() => setExpanded(null)}
+            aria-label="Fechar imagem ampliada"
+          >
+            ×
+          </button>
+          <img
+            className={styles.lightboxImage}
+            src={expanded.image}
+            alt={`Imagem ampliada do projeto ${expanded.title}`}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      ) : null}
     </section>
   );
 }

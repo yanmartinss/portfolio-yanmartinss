@@ -1,4 +1,6 @@
+import type { CSSProperties } from 'react';
 import { SKILL_CATEGORIES } from '../../data/content';
+import { DEFAULT_SKILL_COLOR, SKILL_COLORS } from '../../data/skillColors';
 import type { SkillCategory } from '../../data/types';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import styles from './Skills.module.css';
@@ -14,10 +16,12 @@ function SkillCard({ category }: { category: SkillCategory }) {
       </div>
       <ul className={styles.list}>
         {category.skills.map((skill) => (
-          <li key={skill} className={styles.skill}>
-            <span className={styles.skillMark} aria-hidden="true">
-              ✓
-            </span>
+          <li
+            key={skill}
+            className={styles.skill}
+            style={{ '--skill-color': SKILL_COLORS[skill] ?? DEFAULT_SKILL_COLOR } as CSSProperties}
+          >
+            <span className={styles.skillMark} aria-hidden="true" />
             {skill}
           </li>
         ))}
