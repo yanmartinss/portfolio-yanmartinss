@@ -239,19 +239,9 @@
   padding: var(--space-1) var(--space-3);
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
-  color: var(--color-accent-bright);
-  background: var(--color-accent-soft);
-  border: 1px solid rgba(63, 185, 80, 0.3);
-  border-radius: var(--radius-pill);
-}
-
-.tagAlt {
-  padding: var(--space-1) var(--space-3);
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
-  color: var(--color-accent-alt-bright);
-  background: var(--color-accent-alt-soft);
-  border: 1px solid rgba(163, 113, 247, 0.3);
+  color: var(--skill-color);
+  background: color-mix(in srgb, var(--skill-color) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--skill-color) 35%, transparent);
   border-radius: var(--radius-pill);
 }
 

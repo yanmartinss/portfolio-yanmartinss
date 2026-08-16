@@ -1,4 +1,6 @@
+import type { CSSProperties } from 'react';
 import { EXPERIENCES, PROFILE } from '../../data/content';
+import { DEFAULT_SKILL_COLOR, SKILL_COLORS } from '../../data/skillColors';
 import type { Experience } from '../../data/types';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import styles from './Experience.module.css';
@@ -6,8 +8,12 @@ import styles from './Experience.module.css';
 function TagRow({ tags }: { tags: string[] }) {
   return (
     <ul className={styles.tagRow}>
-      {tags.map((tag, i) => (
-        <li key={tag} className={i % 2 === 1 ? styles.tagAlt : styles.tag}>
+      {tags.map((tag) => (
+        <li
+          key={tag}
+          className={styles.tag}
+          style={{ '--skill-color': SKILL_COLORS[tag] ?? DEFAULT_SKILL_COLOR } as CSSProperties}
+        >
           {tag}
         </li>
       ))}
