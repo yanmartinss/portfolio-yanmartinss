@@ -23,13 +23,7 @@ export const PROJECTS: Project[] = [
     title: "Desafio Mobile - Roteirização",
     description:
       "Aplicativo mobile offline-first para leitura de medidores e roteirização em campo, com captura de foto, geolocalização, OCR on-device e visualização de rotas em mapa.",
-    tags: [
-      "React Native",
-      "Expo",
-      "TypeScript",
-      "SQLite",
-      "Zustand",
-    ],
+    tags: ["React Native", "Expo", "TypeScript", "SQLite", "Zustand"],
     image: "/desafio-mobile.jpg",
     githubUrl: "https://github.com/yanmartinss/desafio-mobile-roteirizacao",
   },
@@ -50,15 +44,5 @@ export const PROJECTS: Project[] = [
     image: "/myalbum.jpg",
     githubUrl: "https://github.com/yanmartinss/myalbum_wc",
     demoUrl: "https://myalbum-wc.vercel.app",
-  },
-  {
-    id: "proj-5",
-    title: "Apple Page - Clone",
-    description:
-      "Treinamento de CSS: clone responsivo da página inicial da Apple, com foco em layout, animações de scroll e fidelidade visual ao design original.",
-    tags: ["HTML", "CSS"],
-    image: "/applepage.png",
-    githubUrl: "https://github.com/yanmartinss/apple-page",
-    demoUrl: "https://yanmartinss.github.io/apple-page/",
   },
 ];
