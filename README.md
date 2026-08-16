@@ -1,32 +1,47 @@
-# React + TypeScript + Vite
+# Portfolio — Yan Martins
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Portfólio pessoal desenvolvido com React, TypeScript e Vite, com uma estética inspirada em terminal/editor de código. Apresenta experiência profissional, projetos, habilidades técnicas e formas de contato.
 
-Currently, two official plugins are available:
+📄 [Currículo](./public/curriculo.pdf)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- [React 19](https://react.dev)
+- [TypeScript](https://www.typescriptlang.org)
+- [Vite](https://vite.dev)
+- [Oxlint](https://oxc.rs) para lint
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Estrutura
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+src/
+├── components/     # Um componente por seção (Header, Hero, Experience, Projects, Skills, EducationContact, Footer)
+├── data/           # Conteúdo do portfólio (perfil, experiências, projetos, skills) e mapa de cores por tecnologia
+└── styles/         # Design tokens e estilos globais
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Cada seção é um componente independente com seu próprio CSS Module. O conteúdo (textos, links, tags) fica centralizado em `src/data`, então atualizar informações não exige mexer em componentes.
+
+## Rodando localmente
+
+```bash
+npm install
+npm run dev
+```
+
+Outros scripts:
+
+```bash
+npm run build     # build de produção (type-check + vite build)
+npm run lint       # oxlint
+npm run preview    # preview do build de produção
+```
+
+## Destaques
+
+- **Cards de projeto** com preview ampliável da imagem (lightbox) — clicar na miniatura amplia a imagem, clicar no restante do card abre o repositório.
+- **Tags coloridas por tecnologia**, nas seções de Projetos e Habilidades, usando cores associadas a cada stack (React, TypeScript, Node.js, Docker etc.) definidas em `src/data/skillColors.ts`.
+
+## Licença
+
+Uso pessoal — sinta-se à vontade para usar como referência.
