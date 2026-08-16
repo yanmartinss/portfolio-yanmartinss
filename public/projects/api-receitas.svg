@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Placeholder do projeto API de Receitas">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#152120"/>
+      <stop offset="1" stop-color="#10141b"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#3fb950" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3fb950" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <rect width="640" height="360" fill="url(#glow)"/>
+  <g font-family="monospace" font-size="18" fill="#e6edf3">
+    <text x="48" y="72" fill="#3fb950">$</text>
+    <text x="72" y="72">curl /api/recipes?ingredient=manjericão</text>
+    <text x="72" y="104" fill="#8b949e">GET https://api-exemplo.com/v1/recipes</text>
+    <text x="72" y="136" fill="#8b949e">→ 200 OK</text>
+  </g>
+  <g font-family="monospace" font-size="16" fill="#8b949e">
+    <text x="72" y="184">"nome": "Pesto Caseiro",</text>
+    <text x="72" y="208">"tempo": "15 min",</text>
+    <text x="72" y="232">"ingredientes": ["manjericão", "pinholes", "azeite"]</text>
+    <text x="72" y="256">}</text>
+  </g>
+  <g fill="#3fb950" opacity="0.6">
+    <circle cx="48" cy="184" r="3"/><circle cx="48" cy="208" r="3"/>
+    <circle cx="48" cy="232" r="3"/><circle cx="48" cy="256" r="3"/>
+  </g>
+</svg>

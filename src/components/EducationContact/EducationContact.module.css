@@ -1,0 +1,207 @@
+.section {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-10) var(--container-pad) var(--space-12);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.education,
+.contact {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+}
+
+.blockTitle {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.blockPrompt {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+}
+
+/* ── Educação ───────────────────────────────────────── */
+.eduList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.eduItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.eduLine {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.eduDot {
+  width: 9px;
+  height: 9px;
+  margin-top: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent-glow);
+}
+
+.eduDegree {
+  font-size: var(--fs-md);
+}
+
+.eduInstitution {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.eduPeriod {
+  color: var(--color-text-faint);
+}
+
+.statusBadge {
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.statusDone {
+  color: var(--color-accent-bright);
+  background: var(--color-accent-soft);
+  border: 1px solid rgba(63, 185, 80, 0.3);
+}
+
+.statusCurrent {
+  color: var(--color-amber);
+  background: var(--color-amber-soft);
+  border: 1px solid rgba(254, 188, 46, 0.35);
+}
+
+/* ── Contato ────────────────────────────────────────── */
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: color var(--transition), border-color var(--transition), background-color var(--transition);
+}
+
+.contactLink:hover {
+  color: var(--color-accent-bright);
+  border-color: var(--color-accent-dim);
+  background: var(--color-accent-soft);
+}
+
+.linkGlyph {
+  color: var(--color-accent);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.input {
+  font-family: inherit;
+  font-size: var(--fs-sm);
+  color: var(--color-text);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input::placeholder {
+  color: var(--color-text-faint);
+}
+
+.input:hover {
+  border-color: var(--color-text-faint);
+}
+
+.input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 0;
+  border-color: var(--color-accent-dim);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 96px;
+  line-height: 1.5;
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: #04130a;
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.submit:hover {
+  background: var(--color-accent-bright);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

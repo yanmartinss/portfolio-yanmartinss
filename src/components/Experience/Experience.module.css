@@ -1,0 +1,264 @@
+.section {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-10) var(--container-pad);
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-left: var(--space-6);
+}
+
+/* linha vertical tracejada (git-log) */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 7px;
+  width: 1px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-border-strong) 0,
+    var(--color-border-strong) 5px,
+    transparent 5px,
+    transparent 10px
+  );
+}
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.node {
+  position: absolute;
+  top: 4px;
+  left: calc(-1 * var(--space-6) + 1px);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nodeCore {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.commitMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  padding-left: var(--space-5);
+}
+
+.commitSubject {
+  color: var(--color-accent-bright);
+}
+
+.commitSubject::before {
+  content: '● ';
+  color: var(--color-accent);
+  margin-right: var(--space-1);
+}
+
+.commitHash {
+  color: var(--color-text-faint);
+}
+
+/* ── Card estilo editor ─────────────────────────────── */
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.windowBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+}
+
+.windowDots {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.dotRed,
+.dotYellow,
+.dotGreen {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dotRed {
+  background: var(--color-red);
+}
+.dotYellow {
+  background: var(--color-yellow);
+}
+.dotGreen {
+  background: var(--color-green);
+}
+
+.fileName {
+  color: var(--color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hash {
+  margin-left: auto;
+  color: var(--color-accent);
+}
+
+.cardBody {
+  padding: var(--space-5);
+}
+
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.role {
+  font-size: var(--fs-xl);
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+.company {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+  font-weight: 500;
+  color: var(--color-accent-alt-bright);
+}
+
+.commitArrow {
+  color: var(--color-text-faint);
+}
+
+.currentBadge {
+  padding: 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-accent-bright);
+  background: var(--color-accent-soft);
+  border: 1px solid rgba(63, 185, 80, 0.35);
+  border-radius: var(--radius-pill);
+}
+
+.cltBadge {
+  padding: 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-accent-alt-bright);
+  background: var(--color-accent-alt-soft);
+  border: 1px solid rgba(163, 113, 247, 0.35);
+  border-radius: var(--radius-pill);
+}
+
+.description {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding-left: var(--space-4);
+}
+
+.bullet {
+  position: relative;
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+}
+
+.bullet::before {
+  content: '›';
+  position: absolute;
+  left: calc(-1 * var(--space-4));
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.tag {
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-accent-bright);
+  background: var(--color-accent-soft);
+  border: 1px solid rgba(63, 185, 80, 0.3);
+  border-radius: var(--radius-pill);
+}
+
+.tagAlt {
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-accent-alt-bright);
+  background: var(--color-accent-alt-soft);
+  border: 1px solid rgba(163, 113, 247, 0.3);
+  border-radius: var(--radius-pill);
+}
+
+@media (max-width: 640px) {
+  .cardHead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+}

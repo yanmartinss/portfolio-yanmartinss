@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Placeholder do projeto Sistema de Agendamentos">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16212b"/>
+      <stop offset="1" stop-color="#10141b"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3fb950" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#3fb950" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <rect width="640" height="360" fill="url(#glow)"/>
+  <g fill="none" stroke="#3fb950" stroke-width="2" opacity="0.5">
+    <rect x="48" y="96" width="300" height="168" rx="12"/>
+    <path d="M48 148h300"/>
+  </g>
+  <g fill="none" stroke="#303b49" stroke-width="2">
+    <path d="M390 96h202M390 148h140"/>
+    <rect x="390" y="200" width="202" height="64" rx="8" fill="#1a2029" stroke="none"/>
+  </g>
+  <text x="390" y="238" font-family="monospace" font-size="16" fill="#6e7681">~ / agendamentos</text>
+</svg>
