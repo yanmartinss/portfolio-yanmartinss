@@ -19,7 +19,10 @@
   overflow: hidden;
   box-shadow: var(--shadow-card);
   cursor: pointer;
-  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
 }
 
 .card:hover {
@@ -193,7 +196,9 @@
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
-  transition: color var(--transition), border-color var(--transition);
+  transition:
+    color var(--transition),
+    border-color var(--transition);
 }
 
 .lightboxClose:hover {

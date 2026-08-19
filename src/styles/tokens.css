@@ -30,9 +30,9 @@
   --color-green: #28c840;
 
   /* ── Tipografia ─────────────────────────────────────── */
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
@@ -65,7 +65,8 @@
 
   /* ── Sombras ────────────────────────────────────────── */
   --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--color-border-strong);
+  --shadow-card-hover:
+    0 12px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--color-border-strong);
   --shadow-glow: 0 0 24px var(--color-accent-glow);
 
   /* ── Transição ──────────────────────────────────────── */

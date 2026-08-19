@@ -14,7 +14,7 @@
 
 /* linha vertical tracejada (git-log) */
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 8px;
   bottom: 8px;
@@ -73,7 +73,7 @@
 }
 
 .commitSubject::before {
-  content: '● ';
+  content: "● ";
   color: var(--color-accent);
   margin-right: var(--space-1);
 }
@@ -89,7 +89,10 @@
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
   overflow: hidden;
-  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
 }
 
 .card:hover {
@@ -221,7 +224,7 @@
 }
 
 .bullet::before {
-  content: '›';
+  content: "›";
   position: absolute;
   left: calc(-1 * var(--space-4));
   color: var(--color-accent);

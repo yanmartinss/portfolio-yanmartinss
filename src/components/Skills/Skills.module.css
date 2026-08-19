@@ -16,7 +16,10 @@
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   box-shadow: var(--shadow-card);
-  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
 }
 
 .card:hover {
@@ -75,7 +78,9 @@
   background: color-mix(in srgb, var(--skill-color) 14%, transparent);
   border: 1px solid color-mix(in srgb, var(--skill-color) 35%, transparent);
   border-radius: var(--radius-pill);
-  transition: background var(--transition), border-color var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition);
 }
 
 .skill:hover {

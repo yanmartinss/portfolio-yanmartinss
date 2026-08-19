@@ -1,4 +1,4 @@
-import styles from './SectionHeading.module.css';
+import styles from "./SectionHeading.module.css";
 
 interface SectionHeadingProps {
   index: string;
@@ -6,7 +6,11 @@ interface SectionHeadingProps {
   subtitle?: string;
 }
 
-export default function SectionHeading({ index, title, subtitle }: SectionHeadingProps) {
+export default function SectionHeading({
+  index,
+  title,
+  subtitle,
+}: SectionHeadingProps) {
   return (
     <div className={styles.heading}>
       <h2 className={styles.title}>

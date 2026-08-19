@@ -1,5 +1,5 @@
-import { PROFILE } from '../../data/content';
-import styles from './Hero.module.css';
+import { PROFILE } from "../../data/content";
+import styles from "./Hero.module.css";
 
 function KnotOrnament() {
   return (
@@ -72,7 +72,9 @@ export default function Hero() {
           <div className={styles.actions}>
             <a
               className={styles.btnPrimary}
-              href={PROFILE.socials.find((s) => s.id === 'linkedin')?.url ?? '#'}
+              href={
+                PROFILE.socials.find((s) => s.id === "linkedin")?.url ?? "#"
+              }
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -89,7 +91,7 @@ export default function Hero() {
             </a>
             <a
               className={styles.btnGhost}
-              href={PROFILE.socials.find((s) => s.id === 'github')?.url ?? '#'}
+              href={PROFILE.socials.find((s) => s.id === "github")?.url ?? "#"}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -120,7 +122,8 @@ export default function Hero() {
             <KnotOrnament />
           </div>
           <p className={styles.photoCaption}>
-            <span className={styles.captionHash}>#</span> dev / {PROFILE.firstName.toLowerCase()}
+            <span className={styles.captionHash}>#</span> dev /{" "}
+            {PROFILE.firstName.toLowerCase()}
           </p>
         </div>
       </div>

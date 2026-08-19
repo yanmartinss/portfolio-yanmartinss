@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { NAV_LINKS, PROFILE } from '../../data/content';
-import styles from './Header.module.css';
+import { useEffect, useState } from "react";
+import { NAV_LINKS, PROFILE } from "../../data/content";
+import styles from "./Header.module.css";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -8,12 +8,12 @@ export default function Header() {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.inner}>
         <a href="#inicio" className={styles.logo}>
           <span className={styles.prompt}>$</span>
@@ -28,7 +28,9 @@ export default function Header() {
             {NAV_LINKS.map((link) => (
               <li key={link.id}>
                 <a className={styles.navLink} href={`#${link.id}`}>
-                  <span className={styles.navIndex}>0{NAV_LINKS.findIndex((l) => l.id === link.id) + 1}.</span>
+                  <span className={styles.navIndex}>
+                    0{NAV_LINKS.findIndex((l) => l.id === link.id) + 1}.
+                  </span>
                   {link.label}
                 </a>
               </li>

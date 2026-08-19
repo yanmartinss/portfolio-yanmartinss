@@ -5,7 +5,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     id: "languages",
     title: "Linguagens & Frameworks",
     glyph: "</>",
-    skills: ["React Native", "React", "TypeScript", "Node.js", "Java"],
+    skills: ["React Native", "React", "TypeScript", "Node.js"],
   },
   {
     id: "databases",

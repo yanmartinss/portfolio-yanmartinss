@@ -16,7 +16,15 @@ export const PROFILE: Profile = {
   role: "Desenvolvedor Full-stack",
   tagline: "Transformando ideias em produtos digitais escaláveis.",
   bio: [
-    <>Atuo no desenvolvimento e manutenção de sistemas corporativos de ponta a ponta, com foco em resolver problemas reais de negócio — não só escrever código. Minha stack principal é <strong>React</strong>, <strong>React Native</strong>, <strong>TypeScript</strong>, <strong>Java</strong> e <strong>PostgreSQL</strong>, com experiência em ambientes ágeis e times multidisciplinares. Gosto de transformar requisitos ambíguos em software estável, testável e fácil de manter.</>,
+    <>
+      Atuo no desenvolvimento e manutenção de sistemas corporativos de ponta a
+      ponta, com foco em resolver problemas reais de negócio — não só escrever
+      código. Minha stack principal é <strong>React</strong>,{" "}
+      <strong>React Native</strong>, <strong>TypeScript</strong> e{" "}
+      <strong>PostgreSQL</strong>, com experiência em ambientes ágeis e times
+      multidisciplinares. Gosto de transformar requisitos ambíguos em software
+      estável, testável e fácil de manter.
+    </>,
   ],
   location: "Fortaleza, Brasil",
   availability: "Disponível para novas oportunidades",

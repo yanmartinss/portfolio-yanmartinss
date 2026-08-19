@@ -1,9 +1,9 @@
-import type { CSSProperties } from 'react';
-import { EXPERIENCES, PROFILE } from '../../data/content';
-import { DEFAULT_SKILL_COLOR, SKILL_COLORS } from '../../data/skillColors';
-import type { Experience } from '../../data/types';
-import SectionHeading from '../SectionHeading/SectionHeading';
-import styles from './Experience.module.css';
+import type { CSSProperties } from "react";
+import { EXPERIENCES, PROFILE } from "../../data/content";
+import { DEFAULT_SKILL_COLOR, SKILL_COLORS } from "../../data/skillColors";
+import type { Experience } from "../../data/types";
+import SectionHeading from "../SectionHeading/SectionHeading";
+import styles from "./Experience.module.css";
 
 function TagRow({ tags }: { tags: string[] }) {
   return (
@@ -12,7 +12,11 @@ function TagRow({ tags }: { tags: string[] }) {
         <li
           key={tag}
           className={styles.tag}
-          style={{ '--skill-color': SKILL_COLORS[tag] ?? DEFAULT_SKILL_COLOR } as CSSProperties}
+          style={
+            {
+              "--skill-color": SKILL_COLORS[tag] ?? DEFAULT_SKILL_COLOR,
+            } as CSSProperties
+          }
         >
           {tag}
         </li>
@@ -42,7 +46,9 @@ function CommitCard({ item }: { item: Experience }) {
         <p className={styles.company}>
           <span className={styles.commitArrow}>→</span>
           {item.company}
-          {item.current ? <span className={styles.currentBadge}>atual</span> : null}
+          {item.current ? (
+            <span className={styles.currentBadge}>atual</span>
+          ) : null}
           {item.isCLT ? <span className={styles.cltBadge}>CLT</span> : null}
         </p>
         <p className={styles.description}>{item.description}</p>

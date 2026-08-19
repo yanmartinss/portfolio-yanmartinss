@@ -35,7 +35,7 @@
 }
 
 .statusDot::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: -4px;
   border-radius: 50%;
@@ -134,7 +134,10 @@
   background: var(--color-accent);
   border: 1px solid var(--color-accent);
   border-radius: var(--radius-md);
-  transition: background-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  transition:
+    background-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
 }
 
 .btnPrimary:hover {
@@ -154,7 +157,10 @@
   background: var(--color-surface-2);
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-md);
-  transition: border-color var(--transition), background-color var(--transition), transform var(--transition);
+  transition:
+    border-color var(--transition),
+    background-color var(--transition),
+    transform var(--transition);
 }
 
 .btnGhost:hover {
@@ -213,8 +219,16 @@
   aspect-ratio: 1 / 1;
   border-radius: var(--radius-md);
   background:
-    radial-gradient(180px 140px at 30% 20%, rgba(63, 185, 80, 0.14), transparent 70%),
-    radial-gradient(200px 160px at 80% 80%, rgba(163, 113, 247, 0.14), transparent 70%),
+    radial-gradient(
+      180px 140px at 30% 20%,
+      rgba(63, 185, 80, 0.14),
+      transparent 70%
+    ),
+    radial-gradient(
+      200px 160px at 80% 80%,
+      rgba(163, 113, 247, 0.14),
+      transparent 70%
+    ),
     var(--color-surface-2);
   border: 1px solid var(--color-border);
   overflow: hidden;

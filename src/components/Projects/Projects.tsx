@@ -1,10 +1,10 @@
-import type { CSSProperties } from 'react';
-import { useEffect, useState } from 'react';
-import { PROJECTS } from '../../data/content';
-import { DEFAULT_SKILL_COLOR, SKILL_COLORS } from '../../data/skillColors';
-import type { Project } from '../../data/types';
-import SectionHeading from '../SectionHeading/SectionHeading';
-import styles from './Projects.module.css';
+import type { CSSProperties } from "react";
+import { useEffect, useState } from "react";
+import { PROJECTS } from "../../data/content";
+import { DEFAULT_SKILL_COLOR, SKILL_COLORS } from "../../data/skillColors";
+import type { Project } from "../../data/types";
+import SectionHeading from "../SectionHeading/SectionHeading";
+import styles from "./Projects.module.css";
 
 function ProjectCard({
   project,
@@ -14,7 +14,7 @@ function ProjectCard({
   onExpandImage: (project: Project) => void;
 }) {
   const openRepo = () => {
-    window.open(project.githubUrl, '_blank', 'noopener,noreferrer');
+    window.open(project.githubUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -25,7 +25,7 @@ function ProjectCard({
       tabIndex={0}
       aria-label={`Ver código do projeto ${project.title}`}
       onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+        if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
           openRepo();
         }
@@ -68,7 +68,11 @@ function ProjectCard({
             <li
               key={tag}
               className={styles.tag}
-              style={{ '--skill-color': SKILL_COLORS[tag] ?? DEFAULT_SKILL_COLOR } as CSSProperties}
+              style={
+                {
+                  "--skill-color": SKILL_COLORS[tag] ?? DEFAULT_SKILL_COLOR,
+                } as CSSProperties
+              }
             >
               {tag}
             </li>
@@ -131,10 +135,10 @@ export default function Projects() {
   useEffect(() => {
     if (!expanded) return;
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setExpanded(null);
+      if (e.key === "Escape") setExpanded(null);
     };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [expanded]);
 
   return (
@@ -146,7 +150,11 @@ export default function Projects() {
       />
       <div className={styles.grid}>
         {PROJECTS.map((project) => (
-          <ProjectCard key={project.id} project={project} onExpandImage={setExpanded} />
+          <ProjectCard
+            key={project.id}
+            project={project}
+            onExpandImage={setExpanded}
+          />
         ))}
       </div>
 

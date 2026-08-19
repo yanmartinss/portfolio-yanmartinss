@@ -1,5 +1,5 @@
-import { PROFILE } from '../../data/content';
-import styles from './Footer.module.css';
+import { PROFILE } from "../../data/content";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -33,7 +33,8 @@ export default function Footer() {
             © {year} {PROFILE.name} — todos os direitos reservados.
           </p>
           <p className={styles.credit}>
-            <span className={styles.creditHash}>#</span> construído com React + TypeScript
+            <span className={styles.creditHash}>#</span> construído com React +
+            TypeScript
           </p>
         </div>
       </div>
