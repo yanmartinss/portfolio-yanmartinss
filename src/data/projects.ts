@@ -45,4 +45,21 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/yanmartinss/myalbum_wc",
     demoUrl: "https://myalbum-wc.vercel.app",
   },
+  {
+    id: "proj-5",
+    title: "Promoções de Livros",
+    description:
+      "Aplicação feita em Typescript que divulga promoções de livros automaticamente de marketplaces como Amazon e Mercado Livre em um canal de telegram através de um bot.",
+    tags: [
+      "Node.js",
+      "TypeScript",
+      "Express",
+      "Prisma",
+      "PostgreSQL",
+      "Docker",
+    ],
+    image: "/geek-promos.jpg",
+    githubUrl: "https://github.com/yanmartinss/geek-promos",
+    demoUrl: "https://t.me/livrospromosbr",
+  },
 ];
