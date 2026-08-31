@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.grid > * {
+  min-width: 0;
+}
+
 .availability {
   display: inline-flex;
   align-items: center;
@@ -59,6 +63,7 @@
   font-size: clamp(var(--fs-3xl), 5vw, var(--fs-4xl));
   margin-bottom: var(--space-5);
   letter-spacing: -0.02em;
+  overflow-wrap: break-word;
 }
 
 .name {
@@ -295,5 +300,11 @@
   .btnPrimary,
   .btnGhost {
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: clamp(var(--fs-2xl), 7vw, var(--fs-3xl));
   }
 }

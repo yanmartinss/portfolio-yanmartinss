@@ -72,3 +72,9 @@
   /* ── Transição ──────────────────────────────────────── */
   --transition: 160ms ease;
 }
+
+@media (max-width: 480px) {
+  :root {
+    --container-pad: 1rem;
+  }
+}

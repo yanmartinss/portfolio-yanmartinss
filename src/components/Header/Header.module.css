@@ -109,10 +109,16 @@
 
 @media (max-width: 640px) {
   .cta {
-    padding: var(--space-2) var(--space-3);
+    padding: var(--space-2);
+    gap: 0;
+  }
+
+  .ctaLabel {
+    display: none;
   }
 
   .cta svg {
-    display: none;
+    width: 18px;
+    height: 18px;
   }
 }
