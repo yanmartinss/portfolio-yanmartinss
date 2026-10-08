@@ -13,22 +13,22 @@ export type {
 export const PROFILE: Profile = {
   name: "{Yan Martins}",
   firstName: "Yan Martins",
-  role: "Desenvolvedor Full-stack",
+  role: "Engenheiro de Software",
   tagline: "Transformando ideias em produtos digitais escaláveis.",
   bio: [
     <>
-      Atuo no desenvolvimento e manutenção de sistemas corporativos de ponta a
-      ponta, com foco em resolver problemas reais de negócio — não só escrever
-      código. Minha stack principal é <strong>React</strong>,{" "}
-      <strong>React Native</strong>, <strong>TypeScript</strong> e{" "}
-      <strong>PostgreSQL</strong>, com experiência em ambientes ágeis e times
-      multidisciplinares. Gosto de transformar requisitos ambíguos em software
-      estável, testável e fácil de manter.
+      Engenheiro de Software especializado em desenvolvimento mobile com{" "}
+      <strong>React Native</strong> e <strong>TypeScript</strong>, focado em
+      integração de APIs REST, otimização de performance e entrega de soluções
+      em produção. No dia a dia também atuo com <strong>React</strong>,{" "}
+      <strong>Node.js</strong> e <strong>PostgreSQL</strong>, em times
+      multidisciplinares com UX/UI, Backend e QA. Gosto de transformar
+      requisitos ambíguos em software estável, testável e fácil de manter.
     </>,
   ],
   location: "Fortaleza, Brasil",
   availability: "Disponível para novas oportunidades",
-  email: "yanmartinss05@gmail.com.br",
+  email: "yanmartinss05@gmail.com",
   resumeUrl: "/curriculo.pdf",
   socials: [
     { id: "github", label: "GitHub", url: "https://github.com/yanmartinss" },

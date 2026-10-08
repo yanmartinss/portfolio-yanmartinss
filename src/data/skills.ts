@@ -3,15 +3,32 @@ import type { SkillCategory } from "./types";
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: "languages",
-    title: "Linguagens & Frameworks",
+    title: "Mobile & Front-end",
     glyph: "</>",
-    skills: ["React Native", "React", "TypeScript", "Node.js"],
+    skills: [
+      "React Native",
+      "TypeScript",
+      "React",
+      "SQLite",
+      "Firebase",
+      "Tailwind CSS",
+    ],
   },
   {
     id: "databases",
-    title: "Bancos de Dados & Ferramentas",
+    title: "Back-end, Dados & Ferramentas",
     glyph: "{}",
-    skills: ["PostgreSQL", "Git & GitHub", "Docker", "Codex", "Prisma"],
+    skills: [
+      "Node.js",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "Docker",
+      "Git & GitHub",
+      "CI/CD",
+      "Codex",
+      "Claude Code",
+    ],
   },
   {
     id: "methodologies",
